@@ -15,19 +15,3 @@ mo.KeyDown:Connect(function(k)
 		p.Character.Humanoid:ChangeState(11)
 	end
 end)
-
-repeat wait() until game.Players.LocalPlayer
-
-evt = game.Players.LocalPlayer:GetMouse()
-
-evt.KeyDown:connect(function(key)
-    if key == "0" then
-    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 25
-    end
-end)
-
-evt.KeyUp:connect(function(key)
-    if key == "0" then
-    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 15
-    end
-end)
