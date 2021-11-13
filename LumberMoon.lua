@@ -1,5 +1,5 @@
--- Gui to Lua
--- Version: 3.2
+-- MoonScript
+-- Version: 1.0
 
 -- Instances:
 
