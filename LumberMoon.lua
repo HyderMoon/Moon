@@ -4,13 +4,11 @@
 -- Instances:
 
 local ScreenGui = Instance.new("ScreenGui")
-local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
 local ScrollingFrame = Instance.new("ScrollingFrame")
+local FramePlayer = Instance.new("Frame")
 local UICorner = Instance.new("UICorner")
-local Frame = Instance.new("Frame")
-local UICorner_2 = Instance.new("UICorner")
 local Fly = Instance.new("TextButton")
-local UICorner_3 = Instance.new("UICorner")
+local UICorner_2 = Instance.new("UICorner")
 Fly.MouseButton1Down:connect(function()
 	repeat wait() 
 	until game.Players.LocalPlayer and game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:findFirstChild("Head") and game.Players.LocalPlayer.Character:findFirstChild("Humanoid") 
@@ -94,7 +92,7 @@ Fly.MouseButton1Down:connect(function()
 	Fly()
 end)
 local NoClip = Instance.new("TextButton")
-local UICorner_4 = Instance.new("UICorner")
+local UICorner_3 = Instance.new("UICorner")
 NoClip.MouseButton1Down:connect(function()
 	noclip = false
 	game:GetService('RunService').Stepped:connect(function()
@@ -111,102 +109,170 @@ NoClip.MouseButton1Down:connect(function()
 			game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
 		end
 	end)
-	print('Loaded')
-	print('Press "E" to noclip')
 end)
 local Player = Instance.new("TextLabel")
+local InfJump = Instance.new("TextButton")
+local UICorner_4 = Instance.new("UICorner")
+local WaterWalk = Instance.new("TextButton")
 local UICorner_5 = Instance.new("UICorner")
-local FrameLateralEsquerdo = Instance.new("Frame")
+local LavaWalk = Instance.new("TextButton")
 local UICorner_6 = Instance.new("UICorner")
 local MoonScript = Instance.new("TextLabel")
 local UICorner_7 = Instance.new("UICorner")
+local FrameTeleport = Instance.new("Frame")
+local UICorner_8 = Instance.new("UICorner")
+local Teleport = Instance.new("TextLabel")
+local TeleportLocations = Instance.new("TextButton")
+local UICorner_9 = Instance.new("UICorner")
 
 --Properties:
 
 ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
-UIAspectRatioConstraint.Parent = ScreenGui
-UIAspectRatioConstraint.AspectRatio = 2.018
-
 ScrollingFrame.Parent = ScreenGui
 ScrollingFrame.Active = true
-ScrollingFrame.BackgroundColor3 = Color3.fromRGB(63, 63, 63)
+ScrollingFrame.BackgroundColor3 = Color3.fromRGB(74, 74, 74)
 ScrollingFrame.BorderColor3 = Color3.fromRGB(63, 63, 63)
-ScrollingFrame.Position = UDim2.new(0.239084631, 0, 0.154898569, 0)
-ScrollingFrame.Size = UDim2.new(0, 571, 0, 373)
+ScrollingFrame.BorderSizePixel = 3
+ScrollingFrame.Position = UDim2.new(0.239084616, 0, 0.154898569, 0)
+ScrollingFrame.Size = UDim2.new(0, 571, 0, 327)
 
-UICorner.CornerRadius = UDim.new(0, 12)
-UICorner.Parent = ScrollingFrame
+FramePlayer.Name = "FramePlayer"
+FramePlayer.Parent = ScrollingFrame
+FramePlayer.BackgroundColor3 = Color3.fromRGB(52, 52, 52)
+FramePlayer.Position = UDim2.new(0.064798601, 0, 0.0640348494, 0)
+FramePlayer.Size = UDim2.new(0, 497, 0, 209)
 
-Frame.Parent = ScrollingFrame
-Frame.BackgroundColor3 = Color3.fromRGB(52, 52, 52)
-Frame.Position = UDim2.new(0.241681248, 0, 0.0352181941, 0)
-Frame.Size = UDim2.new(0, 416, 0, 136)
-
-UICorner_2.CornerRadius = UDim.new(0, 10)
-UICorner_2.Parent = Frame
+UICorner.CornerRadius = UDim.new(0, 10)
+UICorner.Parent = FramePlayer
 
 Fly.Name = "Fly"
-Fly.Parent = Frame
+Fly.Parent = FramePlayer
 Fly.BackgroundColor3 = Color3.fromRGB(63, 63, 63)
-Fly.Position = UDim2.new(0.0270537604, 0, 0.0863111168, 0)
-Fly.Size = UDim2.new(0, 401, 0, 23)
-Fly.Font = Enum.Font.Ubuntu
-Fly.Text = "Fly"
+Fly.Position = UDim2.new(0.0230295341, 0, 0.196045801, 0)
+Fly.Size = UDim2.new(0, 475, 0, 23)
+Fly.Font = Enum.Font.GothamBlack
+Fly.Text = "  Fly (R)"
 Fly.TextColor3 = Color3.fromRGB(255, 255, 255)
 Fly.TextSize = 14.000
+Fly.TextXAlignment = Enum.TextXAlignment.Left
 
-UICorner_3.Parent = Fly
+UICorner_2.Parent = Fly
 
 NoClip.Name = "NoClip"
-NoClip.Parent = Frame
+NoClip.Parent = FramePlayer
 NoClip.BackgroundColor3 = Color3.fromRGB(63, 63, 63)
-NoClip.Position = UDim2.new(0.027053833, 0, 0.316176474, 0)
-NoClip.Size = UDim2.new(0, 400, 0, 23)
-NoClip.Font = Enum.Font.Ubuntu
-NoClip.Text = "NoClip"
+NoClip.Position = UDim2.new(0.023, 0, 0.335000008, 0)
+NoClip.Size = UDim2.new(0, 475, 0, 23)
+NoClip.Font = Enum.Font.GothamBlack
+NoClip.Text = "  NoClip (E)"
 NoClip.TextColor3 = Color3.fromRGB(255, 255, 255)
 NoClip.TextSize = 14.000
+NoClip.TextXAlignment = Enum.TextXAlignment.Left
 
-UICorner_4.Parent = NoClip
+UICorner_3.Parent = NoClip
 
 Player.Name = "Player"
-Player.Parent = Frame
+Player.Parent = FramePlayer
 Player.BackgroundColor3 = Color3.fromRGB(52, 52, 52)
-Player.Position = UDim2.new(0.398043752, 0, -0.210198596, 0)
+Player.BorderColor3 = Color3.fromRGB(52, 52, 52)
+Player.Position = UDim2.new(0.0237982683, 0, 0.0471543521, 0)
 Player.Size = UDim2.new(0, 83, 0, 19)
-Player.Font = Enum.Font.Ubuntu
+Player.Font = Enum.Font.GothamBlack
 Player.Text = "Player"
 Player.TextColor3 = Color3.fromRGB(255, 255, 255)
 Player.TextSize = 14.000
+Player.TextXAlignment = Enum.TextXAlignment.Left
 
-UICorner_5.Parent = Player
+InfJump.Name = "InfJump"
+InfJump.Parent = FramePlayer
+InfJump.BackgroundColor3 = Color3.fromRGB(63, 63, 63)
+InfJump.Position = UDim2.new(0.023, 0, 0.474000007, 0)
+InfJump.Size = UDim2.new(0, 475, 0, 23)
+InfJump.Font = Enum.Font.GothamBlack
+InfJump.Text = "  InfJump"
+InfJump.TextColor3 = Color3.fromRGB(255, 255, 255)
+InfJump.TextSize = 14.000
+InfJump.TextXAlignment = Enum.TextXAlignment.Left
 
-FrameLateralEsquerdo.Name = "Frame Lateral Esquerdo"
-FrameLateralEsquerdo.Parent = ScrollingFrame
-FrameLateralEsquerdo.BackgroundColor3 = Color3.fromRGB(52, 52, 52)
-FrameLateralEsquerdo.BorderColor3 = Color3.fromRGB(56, 56, 56)
-FrameLateralEsquerdo.Position = UDim2.new(-0.000115044415, 0, -0.000422053039, 0)
-FrameLateralEsquerdo.Size = UDim2.new(0, 132, 0, 1111)
+UICorner_4.Parent = InfJump
 
-UICorner_6.Parent = FrameLateralEsquerdo
+WaterWalk.Name = "WaterWalk"
+WaterWalk.Parent = FramePlayer
+WaterWalk.BackgroundColor3 = Color3.fromRGB(63, 63, 63)
+WaterWalk.Position = UDim2.new(0.023, 0, 0.612999976, 0)
+WaterWalk.Size = UDim2.new(0, 475, 0, 23)
+WaterWalk.Font = Enum.Font.GothamBlack
+WaterWalk.Text = "  WaterWalk"
+WaterWalk.TextColor3 = Color3.fromRGB(255, 255, 255)
+WaterWalk.TextSize = 14.000
+WaterWalk.TextXAlignment = Enum.TextXAlignment.Left
+
+UICorner_5.Parent = WaterWalk
+
+LavaWalk.Name = "LavaWalk"
+LavaWalk.Parent = FramePlayer
+LavaWalk.BackgroundColor3 = Color3.fromRGB(63, 63, 63)
+LavaWalk.Position = UDim2.new(0.023, 0, 0.753000021, 0)
+LavaWalk.Size = UDim2.new(0, 475, 0, 23)
+LavaWalk.Font = Enum.Font.GothamBlack
+LavaWalk.Text = "  LavaWalk"
+LavaWalk.TextColor3 = Color3.fromRGB(255, 255, 255)
+LavaWalk.TextSize = 14.000
+LavaWalk.TextXAlignment = Enum.TextXAlignment.Left
+
+UICorner_6.Parent = LavaWalk
 
 MoonScript.Name = "MoonScript"
-MoonScript.Parent = FrameLateralEsquerdo
-MoonScript.BackgroundColor3 = Color3.fromRGB(63, 63, 63)
-MoonScript.Position = UDim2.new(0.188053921, 0, 0.0090246629, 0)
-MoonScript.Size = UDim2.new(0, 81, 0, 20)
-MoonScript.Font = Enum.Font.Ubuntu
-MoonScript.Text = "MoonScript"
+MoonScript.Parent = ScrollingFrame
+MoonScript.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+MoonScript.Position = UDim2.new(0.0847264156, 0, 0.0104878545, 0)
+MoonScript.Size = UDim2.new(0, 476, 0, 41)
+MoonScript.Font = Enum.Font.GothamBlack
+MoonScript.Text = "🌑 MoonScript 🌑"
 MoonScript.TextColor3 = Color3.fromRGB(255, 255, 255)
 MoonScript.TextSize = 14.000
 
 UICorner_7.Parent = MoonScript
 
+FrameTeleport.Name = "FrameTeleport"
+FrameTeleport.Parent = ScrollingFrame
+FrameTeleport.BackgroundColor3 = Color3.fromRGB(52, 52, 52)
+FrameTeleport.Position = UDim2.new(0.064798601, 0, 0.273058802, 0)
+FrameTeleport.Size = UDim2.new(0, 497, 0, 209)
+
+UICorner_8.CornerRadius = UDim.new(0, 10)
+UICorner_8.Parent = FrameTeleport
+
+Teleport.Name = "Teleport"
+Teleport.Parent = FrameTeleport
+Teleport.BackgroundColor3 = Color3.fromRGB(52, 52, 52)
+Teleport.BorderColor3 = Color3.fromRGB(52, 52, 52)
+Teleport.Position = UDim2.new(0.0237982683, 0, 0.0471543521, 0)
+Teleport.Size = UDim2.new(0, 83, 0, 19)
+Teleport.Font = Enum.Font.GothamBlack
+Teleport.Text = "Teleport"
+Teleport.TextColor3 = Color3.fromRGB(255, 255, 255)
+Teleport.TextSize = 14.000
+Teleport.TextXAlignment = Enum.TextXAlignment.Left
+
+TeleportLocations.Name = "Teleport Locations"
+TeleportLocations.Parent = FrameTeleport
+TeleportLocations.BackgroundColor3 = Color3.fromRGB(63, 63, 63)
+TeleportLocations.Position = UDim2.new(0.023, 0, 0.195999995, 0)
+TeleportLocations.Size = UDim2.new(0, 475, 0, 23)
+TeleportLocations.Font = Enum.Font.GothamBlack
+TeleportLocations.Text = "  Locations"
+TeleportLocations.TextColor3 = Color3.fromRGB(255, 255, 255)
+TeleportLocations.TextSize = 14.000
+TeleportLocations.TextXAlignment = Enum.TextXAlignment.Left
+
+UICorner_9.Parent = TeleportLocations
+
 -- Scripts:
 
-local function XNZZMDN_fake_script() -- ScrollingFrame.LocalScript 
+local function EEUFOT_fake_script() -- ScrollingFrame.LocalScriptMoverJanela 
 	local script = Instance.new('LocalScript', ScrollingFrame)
 
 	local UIS = game:GetService('UserInputService')
@@ -244,4 +310,4 @@ local function XNZZMDN_fake_script() -- ScrollingFrame.LocalScript
 		end
 	end)
 end
-coroutine.wrap(XNZZMDN_fake_script)()
+coroutine.wrap(EEUFOT_fake_script)()
