@@ -1,5 +1,5 @@
--- MoonScript
--- Version: 1.0
+-- Gui to Lua
+-- Version: 3.2
 
 -- Instances:
 
@@ -62,7 +62,7 @@ Fly.MouseButton1Down:connect(function()
 		plr.Character.Humanoid.PlatformStand = false 
 	end 
 	mouse.KeyDown:connect(function(key) 
-		if key:lower() == "f" then 
+		if key:lower() == "r" then 
 			if flying then flying = false 
 			else 
 				flying = true 
@@ -112,6 +112,35 @@ NoClip.MouseButton1Down:connect(function()
 end)
 local Player = Instance.new("TextLabel")
 local InfJump = Instance.new("TextButton")
+InfJump.MouseButton1Down:connect(function()
+	_G.infinjump = true
+
+	local Player = game:GetService("Players").LocalPlayer
+	local Mouse = Player:GetMouse()
+	Mouse.KeyDown:connect(function(k)
+		if _G.infinjump then
+			if k:byte() == 32 then
+				Humanoid = game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
+				Humanoid:ChangeState("Jumping")
+				wait(0.1)
+				Humanoid:ChangeState("Seated")
+			end
+		end
+	end)
+
+	local Player = game:GetService("Players").LocalPlayer
+	local Mouse = Player:GetMouse()
+	Mouse.KeyDown:connect(function(k)
+		k = k:lower()
+		if k == "f" then
+			if _G.infinjump == true then
+				_G.infinjump = false
+			else
+				_G.infinjump = true
+			end
+		end
+	end)
+end)
 local UICorner_4 = Instance.new("UICorner")
 local WaterWalk = Instance.new("TextButton")
 local UICorner_5 = Instance.new("UICorner")
@@ -272,7 +301,7 @@ UICorner_9.Parent = TeleportLocations
 
 -- Scripts:
 
-local function EEUFOT_fake_script() -- ScrollingFrame.LocalScriptMoverJanela 
+local function FAXTW_fake_script() -- ScrollingFrame.LocalScriptMoverJanela 
 	local script = Instance.new('LocalScript', ScrollingFrame)
 
 	local UIS = game:GetService('UserInputService')
@@ -310,4 +339,4 @@ local function EEUFOT_fake_script() -- ScrollingFrame.LocalScriptMoverJanela
 		end
 	end)
 end
-coroutine.wrap(EEUFOT_fake_script)()
+coroutine.wrap(FAXTW_fake_script)()
