@@ -62,7 +62,7 @@ Fly.MouseButton1Down:connect(function()
 		plr.Character.Humanoid.PlatformStand = false 
 	end 
 	mouse.KeyDown:connect(function(key) 
-		if key:lower() == "r" then 
+		if key:lower() == "f" then 
 			if flying then flying = false 
 			else 
 				flying = true 
