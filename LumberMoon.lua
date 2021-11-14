@@ -20,7 +20,7 @@ local flying = false
 local deb = true 
 local ctrl = {f = 0, b = 0, l = 0, r = 0} 
 local lastctrl = {f = 0, b = 0, l = 0, r = 0} 
-local maxspeed = 100 
+local maxspeed = 16 
 local speed = 100 
 
 function Fly() 
@@ -39,9 +39,9 @@ if speed > maxspeed then
 speed = maxspeed 
 end 
 elseif not (ctrl.l + ctrl.r ~= 0 or ctrl.f + ctrl.b ~= 0) and speed ~= 0 then 
-speed = speed-100 
+speed = speed-100
 if speed < 100 then 
-speed = 100 
+speed = 100
 end 
 end 
 if (ctrl.l + ctrl.r) ~= 0 or (ctrl.f + ctrl.b) ~= 0 then 
