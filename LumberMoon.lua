@@ -1,5 +1,5 @@
--- Gui to Lua
--- Version: 3.2
+-- MoonScript
+-- Version: 1.0
 
 -- Instances:
 
@@ -10,7 +10,7 @@ local UICorner = Instance.new("UICorner")
 local Fly = Instance.new("TextButton")
 local UICorner_2 = Instance.new("UICorner")
 Fly.MouseButton1Down:connect(function()
-repeat wait() 
+	repeat wait() 
 	until game.Players.LocalPlayer and game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:findFirstChild("Head") and game.Players.LocalPlayer.Character:findFirstChild("Humanoid") 
 	local mouse = game.Players.LocalPlayer:GetMouse() 
 	repeat wait() until mouse
@@ -90,11 +90,58 @@ repeat wait()
 		end 
 	end)
 	Fly()
+end)
 local NoClip = Instance.new("TextButton")
 local UICorner_3 = Instance.new("UICorner")
+NoClip.MouseButton1Down:connect(function()
+	noclip = false
+	game:GetService('RunService').Stepped:connect(function()
+		if noclip then
+			game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+		end
+	end)
+	plr = game.Players.LocalPlayer
+	mouse = plr:GetMouse()
+	mouse.KeyDown:connect(function(key)
+
+		if key == "e" then
+			noclip = not noclip
+			game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+		end
+	end)
+end)
 local Player = Instance.new("TextLabel")
 local InfJump = Instance.new("TextButton")
 local UICorner_4 = Instance.new("UICorner")
+InfJump.MouseButton1Down:connect(function()
+	_G.infinjump = true
+
+	local Player = game:GetService("Players").LocalPlayer
+	local Mouse = Player:GetMouse()
+	Mouse.KeyDown:connect(function(k)
+		if _G.infinjump then
+			if k:byte() == 32 then
+				Humanoid = game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
+				Humanoid:ChangeState("Jumping")
+				wait(0.1)
+				Humanoid:ChangeState("Seated")
+			end
+		end
+	end)
+
+	local Player = game:GetService("Players").LocalPlayer
+	local Mouse = Player:GetMouse()
+	Mouse.KeyDown:connect(function(k)
+		k = k:lower()
+		if k == "f" then
+			if _G.infinjump == true then
+				_G.infinjump = false
+			else
+				_G.infinjump = true
+			end
+		end
+	end)
+end)
 local WaterWalk = Instance.new("TextButton")
 local UICorner_5 = Instance.new("UICorner")
 local LavaWalk = Instance.new("TextButton")
@@ -254,7 +301,7 @@ UICorner_9.Parent = TeleportLocations
 
 -- Scripts:
 
-local function BBWH_fake_script() -- ScrollingFrame.LocalScriptMoverJanela 
+local function DXRWGZ_fake_script() -- ScrollingFrame.LocalScriptMoverJanela 
 	local script = Instance.new('LocalScript', ScrollingFrame)
 
 	local UIS = game:GetService('UserInputService')
@@ -292,4 +339,4 @@ local function BBWH_fake_script() -- ScrollingFrame.LocalScriptMoverJanela
 		end
 	end)
 end
-coroutine.wrap(BBWH_fake_script)()
+coroutine.wrap(DXRWGZ_fake_script)()
