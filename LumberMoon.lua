@@ -10,6 +10,7 @@ local UICorner = Instance.new("UICorner")
 local Fly = Instance.new("TextButton")
 local UICorner_2 = Instance.new("UICorner")
 Fly.MouseButton1Down:connect(function()
+	repeat wait() 
 	local player = game.Players.LocalPlayer
 local char = player.Character or player.CharacterAdded:Wait()
 local h = char:WaitForChild('Humanoid')
